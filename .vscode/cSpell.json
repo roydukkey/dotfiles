@@ -1,0 +1,16 @@
+{
+	"ignorePaths": [
+		"node_modules/**/{.*/**/,.*/**/.,,.}*",
+		"*.lock.json",
+		"*-lock.json",
+		"*.lock",
+		".DS_Store",
+		".git"
+	],
+	// Before adding a word, see if there is already a dictionary in which it is contained.
+	// http://github.com/streetsidesoftware/cspell-dicts
+	"words": [
+		"editorconfig",
+		"roydukkey"
+	]
+}

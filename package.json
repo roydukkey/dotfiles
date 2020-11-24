@@ -1,0 +1,37 @@
+{
+	"name": "dot-files",
+	"description": "codereview: docs",
+	"version": "1.0.0",
+	"author": {
+		"name": "roydukkey",
+		"email": "contact@changelog.me",
+		"url": "http://changelog.me"
+	},
+	"license": "codereview: MIT",
+	"homepage": "https://github.com/roydukkey/codereview:repo/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roydukkey/codereview:repo.git"
+	},
+	"bugs": {
+		"url": "https://github.com/roydukkey/codereview:repo/issues"
+	},
+	"keywords": [
+		"codereview: docs"
+	],
+	"devDependencies": {
+		"clean-package": "^1.0.1",
+		"cspell": "^4.2.2"
+	},
+	"scripts": {
+		"lint": "cspell --config './.vscode/cSpell.json' '**/{.*/**/,.*/**/.,,.}*'"
+	},
+	"clean-package": {
+		"indent": "\t",
+		"remove": [
+			"clean-package",
+			"devDependencies",
+			"scripts"
+		]
+	}
+}
