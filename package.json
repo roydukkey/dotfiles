@@ -43,10 +43,10 @@
 	},
 	"scripts": {
 		"clean": "node -e \"fs.rmdirSync('./dist', { recursive: true })\"",
-		"build": "yarpm run clean && tsc",
 		"lint": "yarpm run lint:es && yarpm run lint:spelling",
 		"lint:es": "eslint --ext .ts ./src ./test",
 		"lint:spelling": "cspell --config './.vscode/cSpell.json' '**/{.*/**/,.*/**/.,,.}*'",
+		"build": "yarpm run clean && tsc",
 		"minify": "terser --compress --mangle -o $npm_package_main -- $npm_package_main",
 		"pretest": "yarpm run lint",
 		"test": "jest",
