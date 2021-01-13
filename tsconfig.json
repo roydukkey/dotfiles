@@ -14,7 +14,7 @@
 		"strict": true,
 		"noImplicitAny": true,
 		"noImplicitThis": true,
-		"removeComments": true
+		"removeComments": false
 	},
 	"exclude": [
 		"node_modules",
