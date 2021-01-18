@@ -17,7 +17,7 @@
 		"url": "https://github.com/roydukkey/codereview:repo/issues"
 	},
 	"keywords": [
-		"codereview: docs"
+		"codereview: add keywords"
 	],
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
