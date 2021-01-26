@@ -58,7 +58,6 @@
 		"remove": [
 			"babel",
 			"clean-package",
-			"devDependencies",
 			"eslintConfig",
 			"jest",
 			"scripts"
