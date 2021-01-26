@@ -48,9 +48,8 @@
 		"lint:spelling": "cspell --config './.vscode/cSpell.json' '**/{.*/**/,.*/**/.,,.}*'",
 		"build": "yarpm run clean && tsc",
 		"minify": "terser --compress --mangle -o $npm_package_main -- $npm_package_main",
-		"pretest": "yarpm run lint",
 		"test": "jest",
-		"prepack": "yarpm run build && yarpm run minify && yarpm run test -- --coverage=false --verbose=false && clean-package",
+		"prepack": "yarpm run lint && yarpm run build && yarpm run minify && yarpm run test -- --coverage=false --verbose=false && clean-package",
 		"new:pack": "yarpm pack && clean-package restore",
 		"new:publish": "yarpm publish && clean-package restore"
 	},
