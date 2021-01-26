@@ -42,7 +42,7 @@
 		"yarpm": "^1.1.1"
 	},
 	"scripts": {
-		"clean": "node -e \"fs.rmdirSync('./dist', { recursive: true })\"",
+		"clean": "node -e \"fs.rmSync('./dist', { recursive: true, force: true })\"",
 		"lint": "yarpm run lint:spelling && yarpm run lint:es",
 		"lint:es": "eslint --ext .ts ./src ./test",
 		"lint:spelling": "cspell --config './.vscode/cSpell.json' '**/{.*/**/,.*/**/.,,.}*'",
