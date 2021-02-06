@@ -2,12 +2,12 @@
 	"ignorePaths": [
 		"dist",
 		"node_modules/**/{.*/**/,.*/**/.,,.}*",
+		".git/**",
+		".jest/**",
+		"**/.DS_Store",
 		"*.lock.json",
 		"*-lock.json",
-		"*.lock",
-		".DS_Store",
-		".git",
-		".jest"
+		"*.lock"
 	],
 	"dictionaries": [
 		"typescript"
