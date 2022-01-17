@@ -1,6 +1,42 @@
 {
-  // PATH: ~/Library/Application Support/Code/User/snippets/vue.json
-  //
+	// PATH: ~/Library/Application Support/Code/User/snippets/vue.json
+	//
+	// =================================================================================================================
+	// TS Typings
+	// =================================================================================================================
+	// MIXINS:
+	//
+	// import Vue from 'vue';
+	// import { filterImages } from './mixins';
+	// import type { VueConstructor } from 'vue';
+	// export default (Vue as VueConstructor<Vue & InstanceType<typeof filterImages>>).extend({
+	//      mixins: [
+	//           filterImages,
+	//      ]
+	// });
+	// =================================================================================================================
+	// METHODS and COMPUTED in DATA:
+	//
+	// import Vue from 'vue';
+	// import type { VueConstructor } from 'vue';
+	// interface ComponentData {
+	//      buttonAction: () => void;
+	// }
+	// interface DataMethods {
+	//      close: () => void;
+	// }
+	// export default (Vue as VueConstructor<Vue & DataMethods>).extend({
+	//      methods: [
+	//           close: () => console.log('close'),
+	//      ],
+	//      data(): ComponentData {
+	//           return {
+	//                buttonAction: this.close
+	//           }
+	//      }
+	// });
+	// =================================================================================================================
+	//
 	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
@@ -24,6 +60,7 @@
 			"",
 			"<script lang=\"ts\">",
 			"import Vue from 'vue';",
+			"import type { PropType } from 'vue';",
 			"",
 			"interface ComponentData {",
 			"\t",
@@ -31,16 +68,22 @@
 			"",
 			"export default Vue.extend({",
 			"\tname: '${1:${TM_FILENAME_BASE}}',",
-			"\tdata(): ComponentData {",
-			"\t\treturn {",
-			"\t\t\t",
-			"\t\t};",
+			"\tprops: {",
+			"\t\titems: {",
+			"\t\t\ttype: Array as PropType<string | string[]>",
+			"\t\t\tdefault: []",
+			"\t\t}",
+			"\t},",
+			"\tmethods: {",
+			"\t\t",
 			"\t},",
 			"\tcomputed: {",
 			"",
 			"\t},",
-			"\tmethods: {",
-			"\t\t",
+			"\tdata(): ComponentData {",
+			"\t\treturn {",
+			"\t\t\t",
+			"\t\t};",
 			"\t}",
 			"})",
 			"</script>",
