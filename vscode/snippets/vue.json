@@ -9,6 +9,7 @@
 	// import Vue from 'vue';
 	// import { filterImages } from './mixins';
 	// import type { VueConstructor } from 'vue';
+	//
 	// export default (Vue as VueConstructor<Vue & InstanceType<typeof filterImages>>).extend({
 	//      mixins: [
 	//           filterImages,
@@ -19,12 +20,15 @@
 	//
 	// import Vue from 'vue';
 	// import type { VueConstructor } from 'vue';
+	//
 	// interface ComponentData {
 	//      buttonAction: () => void;
 	// }
+	//
 	// interface DataMethods {
 	//      close: () => void;
 	// }
+	//
 	// export default (Vue as VueConstructor<Vue & DataMethods>).extend({
 	//      methods: [
 	//           close: () => console.log('close'),
@@ -35,6 +39,7 @@
 	//           }
 	//      }
 	// });
+	//
 	// =================================================================================================================
 	//
 	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
@@ -52,6 +57,7 @@
 	// }
 
 	"Vue Scaffold w/TypeScript": {
+		"description": "Scaffolds a new Vue component using TypeScript and SCSS.",
 		"prefix": "vuets",
 		"body": [
 			"<template>",
@@ -91,7 +97,46 @@
 			"<style lang=\"scss\" scoped>",
 			"",
 			"</style>"
-		],
-		"description": "Scaffolds a new Vue component using TypeScript and SCSS."
+		]
+	},
+	"Vue Wrapper Component": {
+		"description": "Scaffolds a new Vue wrapper component using TypeScript and SCSS.",
+		"prefix": "vuewrapper",
+		"body": [
+			"<template>",
+			"\t<${1:ds-text} v-bind=\"\\$attrs\" v-on=\"\\$listeners\">",
+			"\t\t<!-- Pass through scoped slots -->",
+			"\t\t<template v-for=\"(_, name) in \\$scopedSlots\" v-slot:[name]=\"slotData\">",
+			"\t\t\t<slot :name=\"name\" v-bind=\"slotData\" />",
+			"\t\t</template>",
+			"",
+			"\t\t<!-- Pass through normal slots -->",
+			"\t\t<template v-for=\"(_, name) in \\$slots\" v-slot:[name]>",
+			"\t\t\t<slot :name=\"name\" />",
+			"\t\t</template>",
+			"",
+			"\t\t<!-- After iterating over slots and scopedSlots, you can customize them like this. -->",
+			"\t\t<!-- <template v-slot:image>",
+			"\t\t\t<slot name=\"image\" />",
+			"\t\t\t<span>This text will be added to the \"image\" slot.</span>",
+			"\t\t</template> -->",
+			"\t</${1}>",
+			"</template>",
+			"",
+			"<script lang=\"ts\">",
+			"import Vue from 'vue';",
+			"",
+			"export default Vue.extend({",
+			"\tname: '${2:${TM_FILENAME_BASE}}',",
+			"\tinheritAttrs: false",
+			"});",
+			"</script>",
+			"",
+			"<style lang=\"scss\">",
+			"",
+			"$0",
+			"",
+			"</style>"
+		]
 	}
 }
