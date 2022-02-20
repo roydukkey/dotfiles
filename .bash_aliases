@@ -1,5 +1,8 @@
 # Create symlinks to the scripts to place before system versions.
+#
 # eg. python
+#      ln -s /opt/homebrew/bin/python3 ~/opt/scripts/python
+#
 #export PATH=/Users/roydukkey/opt/scripts:$PATH
 
 # Report CPU Temperature @RPi
