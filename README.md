@@ -1,7 +1,7 @@
 # dotfiles
 ## Raspberry Pi: Pi-hole
 
-***Danger!*** never pull the power on the RPI device. This will almost certainly brick the Micro SSD card. Use one of the options below to shutdown the device: [web interface](#web-interface) or [terminal command](#common-commands).
+***Danger!*** never pull the power on the RPI device without first shutting down the device. This will almost certainly brick the Micro SSD card. Use one of the options below to shutdown the device: [web interface](#web-interface) or [terminal command](#common-commands).
 
 ### Web interface
 
