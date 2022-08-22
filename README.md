@@ -7,7 +7,7 @@
 
 The web interface is available at http://pi.hole/admin or http://192.168.1.xxx/admin
 
-If you need to disable blocking, this can be done from this web interface. There are options to disable for a period of time or domains can be added to the `Whitelist` so they are never blocked.
+If you need to disable blocking, this can be done from this web interface. There are options to disable for a period of time or domains can be added to the `Whitelist` so they are never blocked. Alternatively, there is also a `Blacklist` to always block a certain domain.
 
 Periodically, block lists should be updated. This can be done from `Tools` -> `Update Gravity`.
 
