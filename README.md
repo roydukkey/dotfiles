@@ -1,7 +1,7 @@
 # dotfiles
 ## Raspberry Pi: Pi-hole
 
-***Danger!*** never pull the power on the RPI device. This will almost certainly brick the Micro SSD card. Use one of the sever options below: [web interface](#web-interface) or [terminal command](#common-commands).
+***Danger!*** never pull the power on the RPI device. This will almost certainly brick the Micro SSD card. Use one of the options below to shutdown the device: [web interface](#web-interface) or [terminal command](#common-commands).
 
 ### Web interface
 
@@ -26,9 +26,9 @@ These commands are expected to be run after logging in to server over SSH. Each 
 pihole -a -p
 
 # Shutdown
-sudo shutdown now
+sudo poweroff
 # Restart
-sudo shutdown now
+sudo reboot
 
 # Updating RPI
 sudo apt update
