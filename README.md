@@ -38,3 +38,8 @@ sudo apt full-upgrade
 # Check disk space
 df -h
 ```
+
+### Further improve blocking
+
+1. [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) for Google Chrome
+2. [SponsorBlock for YouTube](https://chrome.google.com/webstore/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone) for Google Chrome
