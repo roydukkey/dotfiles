@@ -25,7 +25,7 @@ These commands are expected to be run after logging in to server over SSH. Each 
 # Change Pi-hole web interface password
 pihole -a -p
 
-# Shutdown
+# Shutdown (wait for green light on RPI to stop blinking)
 sudo poweroff
 # Restart
 sudo reboot
