@@ -2,45 +2,6 @@
 	// PATH: ~/Library/Application Support/Code/User/snippets/vue.json
 	//
 	// =================================================================================================================
-	// TS Typings
-	// =================================================================================================================
-	// MIXINS:
-	//
-	// import Vue from 'vue';
-	// import { filterImages } from './mixins';
-	// import type { VueConstructor } from 'vue';
-	//
-	// export default (Vue as VueConstructor<Vue & InstanceType<typeof filterImages>>).extend({
-	//      mixins: [
-	//           filterImages,
-	//      ]
-	// });
-	// =================================================================================================================
-	// METHODS and COMPUTED in DATA:
-	//
-	// import Vue from 'vue';
-	// import type { VueConstructor } from 'vue';
-	//
-	// interface ComponentData {
-	//      buttonAction: () => void;
-	// }
-	//
-	// interface DataMethods {
-	//      close: () => void;
-	// }
-	//
-	// export default (Vue as VueConstructor<Vue & DataMethods>).extend({
-	//      methods: [
-	//           close: () => console.log('close'),
-	//      ],
-	//      data(): ComponentData {
-	//           return {
-	//                buttonAction: this.close
-	//           }
-	//      }
-	// });
-	//
-	// =================================================================================================================
 	//
 	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -55,43 +16,20 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
 	"Vue Scaffold w/TypeScript": {
-		"description": "Scaffolds a new Vue component using TypeScript and SCSS.",
 		"prefix": "vuets",
+		"description": "Scaffolds a new Vue component using TypeScript and SCSS",
 		"body": [
 			"<template>",
 			"\t$0",
 			"</template>",
 			"",
-			"<script lang=\"ts\">",
-			"import Vue from 'vue';",
-			"import type { PropType } from 'vue';",
+			"<script lang=\"ts\" setup>",
 			"",
-			"interface ComponentData {",
+			"export interface Props {",
 			"\t",
 			"}",
 			"",
-			"export default Vue.extend({",
-			"\tname: '${1:${TM_FILENAME_BASE}}',",
-			"\tprops: {",
-			"\t\titems: {",
-			"\t\t\ttype: Array as PropType<string | string[]>",
-			"\t\t\tdefault: []",
-			"\t\t}",
-			"\t},",
-			"\tmethods: {",
-			"\t\t",
-			"\t},",
-			"\tcomputed: {",
-			"",
-			"\t},",
-			"\tdata(): ComponentData {",
-			"\t\treturn {",
-			"\t\t\t",
-			"\t\t};",
-			"\t}",
-			"})",
 			"</script>",
 			"",
 			"<style lang=\"scss\" scoped>",
@@ -100,41 +38,39 @@
 		]
 	},
 	"Vue Wrapper Component": {
+		"prefix": "vuets-complete",
 		"description": "Scaffolds a new Vue wrapper component using TypeScript and SCSS.",
-		"prefix": "vuewrapper",
 		"body": [
 			"<template>",
-			"\t<${1:ds-text} v-bind=\"\\$attrs\" v-on=\"\\$listeners\">",
-			"\t\t<!-- Pass through scoped slots -->",
-			"\t\t<template v-for=\"(_, name) in \\$scopedSlots\" v-slot:[name]=\"slotData\">",
+			"\t<${1:ds-text} :class=\"\\$style.vcl\">",
+			"\t\t<template v-for=\"_, name in \\$slots\" #[name]=\"slotData\">",
 			"\t\t\t<slot :name=\"name\" v-bind=\"slotData\" />",
 			"\t\t</template>",
-			"",
-			"\t\t<!-- Pass through normal slots -->",
-			"\t\t<template v-for=\"(_, name) in \\$slots\" v-slot:[name]>",
-			"\t\t\t<slot :name=\"name\" />",
-			"\t\t</template>",
-			"",
-			"\t\t<!-- After iterating over slots and scopedSlots, you can customize them like this. -->",
-			"\t\t<!-- <template v-slot:image>",
-			"\t\t\t<slot name=\"image\" />",
-			"\t\t\t<span>This text will be added to the \"image\" slot.</span>",
-			"\t\t</template> -->",
 			"\t</${1}>",
 			"</template>",
 			"",
-			"<script lang=\"ts\">",
-			"import Vue from 'vue';",
+			"<script lang=\"ts\" setup>",
 			"",
-			"export default Vue.extend({",
-			"\tname: '${2:${TM_FILENAME_BASE}}',",
-			"\tinheritAttrs: false",
+			"export interface Props {",
+			"\t$0",
+			"};",
+			"",
+			"export type Emits = (name: 'click', event: PointerEvent) => void;",
+			"",
+			"withDefaults(defineProps<Props>(), {",
+			"\t",
 			"});",
+			"defineEmits<Emits>();",
+			"",
 			"</script>",
 			"",
-			"<style lang=\"scss\">",
+			"<style lang=\"scss\" module>",
 			"",
-			"$0",
+			"@use '.' as *;",
+			"",
+			".vcl {",
+			"\t@include component();",
+			"}",
 			"",
 			"</style>"
 		]
