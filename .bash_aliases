@@ -33,6 +33,8 @@ alias Tower='open -a Tower'
 # Batch File Loop
 #for i in *.mp4; do ./ffmpeg -i "$i" -vcodec copy -filter:a "volume=4" "./new/${i%.*}.mp4"; done
 
+#alias vtt='(){for i in *.vtt; do subsrt convert "$i" "./${i%.*}.srt"; done;}'
+
 # CE Aliases
 #alias envmake='virtualenv -p python3 .venv'
 #alias envup='source .venv/bin/activate'
