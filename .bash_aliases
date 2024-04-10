@@ -33,6 +33,9 @@ alias Tower='open -a Tower'
 # ffmpeg: recreate timestamps
 #./ffmpeg -i ./in.mkv -fps_mode drop -map 0 -c copy out.mkv
 
+# mkvmerge: concat
+#/Applications/MKVToolNix-83.0.app/Contents/MacOS/mkvmerge -o join.mkv ./1.mkv + ./2.mkv
+
 # Batch File Loop
 #for i in *.mp4; do ./ffmpeg -i "$i" -vcodec copy -filter:a "volume=4" "./new/${i%.*}.mp4"; done
 
