@@ -30,6 +30,9 @@ alias Tower='open -a Tower'
 # ffmpeg: Replace audio of a video with the audio from a different video
 #./ffmpeg -an -i "./video.mp4" -vn -i "./audio.mp4" -map 0:v -map 1:a -vcodec copy "./new/merged.mp4"
 
+# ffmpeg: recreate timestamps
+#./ffmpeg -i ./in.mkv -fps_mode drop -map 0 -c copy out.mkv
+
 # Batch File Loop
 #for i in *.mp4; do ./ffmpeg -i "$i" -vcodec copy -filter:a "volume=4" "./new/${i%.*}.mp4"; done
 
