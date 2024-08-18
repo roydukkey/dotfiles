@@ -36,6 +36,9 @@ alias Tower='open -a Tower'
 # mkvmerge: concat
 #/Applications/MKVToolNix-83.0.app/Contents/MacOS/mkvmerge -o join.mkv ./1.mkv + ./2.mkv
 
+# extract: track
+# /Applications/MKVToolNix-86.0.app/Contents/MacOS/mkvextract tracks ./1.mkv <track_numer>:<subtitle_file.srt>
+
 # Batch File Loop
 #for i in *.mp4; do ./ffmpeg -i "$i" -vcodec copy -filter:a "volume=4" "./new/${i%.*}.mp4"; done
 
