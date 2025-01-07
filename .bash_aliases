@@ -25,6 +25,7 @@ alias Tower='open -a Tower'
 #./ffmpeg -copyts -ss [start] -i in.mp4 -to [end] -map 0 -c copy out.mp4
 
 # ffmpeg: Increase the volume
+# more: https://stackoverflow.com/questions/24911402/increasing-a-files-volume-using-vlc-cli
 #./ffmpeg -i "./1.mp4" -vcodec copy -filter:a "volume=4" "./new/1.mp4"
 
 # ffmpeg: Replace audio of a video with the audio from a different video
